@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Wallys Widget Company</title>
+    </head>
+    <body>
+        <h1>Total Widget Packets Required</h1>
+
+        <input id="widgetsCount" type="number" placeholder="Number Of Widgets">
+        <button id="calculate">Calculate</button>
+       
+        <div id="widgetsResult"></div>
+        
+        <?php 
+// Takes in initial php request 
+
+if($_POST['widgets']){
+    $totalPackets = calculateWidgets($_POST['widgets']);
+
+    echo json_encode($totalPackets);
+}
+
+// Main function for calculating widgets
+function calculateWidgets($widgetsRequired){
+    // Array of packets that are avaliable
+    $packets = [250, 500, 1000, 2000, 5000];
+    sort($packets);
+    $pickedPackets = [];
+    
+     // If remainder is less than or equal to the smallest value in packets
+            if($remainder <= $packets[0]){
+
+                array_push($pickedPackets, $packets[0]);
+                $remainder = $remainder - $packets[0];
+            
+            // Otherwise value is bigger than 250 so needs to be 500 or second biggest total
+            }else{
+
+                array_push($pickedPackets, $packets[1]);
+                $remainder = $remainder - $packets[1];
+
+            }
+
+// Runs through each of the packets sizes
+            foreach($flipPackets as $packet) {
+                
+                // Calculates the amount of widgets that are remaining to be packed for this particular size
+                $valueLeft = $remainder - $packet;
+
+                // If the value calculated is above 0 
+                if($valueLeft > 0){ 
+
+                    // If the packet value is deducting more than the highest value currently saved then replace this value
+                    if($packet >= $highestDeduction){
+                        $highestDeduction = $packet;
+                        $pickedValue = $packet;
+                        return $finalArray;
+}
+
+?>       
+                  
