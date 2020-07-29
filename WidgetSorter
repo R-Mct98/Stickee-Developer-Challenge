@@ -26,7 +26,9 @@ function calculateWidgets($widgetsRequired){
     sort($packets);
     $pickedPackets = [];
     
-     // If remainder is less than or equal to the smallest value in packets
+        if($remainder < $packets[1] && $remainder > 0){
+
+            // If remainder is less than or equal to the smallest value in packets
             if($remainder <= $packets[0]){
 
                 array_push($pickedPackets, $packets[0]);
